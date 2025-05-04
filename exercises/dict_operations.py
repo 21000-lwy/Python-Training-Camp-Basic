@@ -20,4 +20,23 @@ def student_dict_operations(students_dict, operation, *args):
     - 根据操作返回不同结果
     """
     # 请在下方编写代码
-    pass 
+    match operation:
+        case "add":
+            name,score=args
+            students_dict[name]=score
+            return students_dict
+        case "remove":
+            name=args[0]
+            if name in students_dict:
+                del students_dict[name]
+            return students_dict
+        case "update":
+            name,new_score=args
+            if name in students_dict:
+                students_dict[name]=new_score
+            return students_dict
+        case "get":
+            name=args[0]
+            return students_dict[name]
+
+    
